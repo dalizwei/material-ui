@@ -47,7 +47,9 @@ const Overlay = React.createClass({
   },
 
   componentWillUnmount() {
-    this._allowScrolling();
+    if (this.props.show) {
+      this._allowScrolling();
+    }
   },
 
   _originalBodyOverflow: '',
